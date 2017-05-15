@@ -12,12 +12,13 @@ import FirebaseDatabase
 class FirebaseManager {
     static let manager = FirebaseManager()
     internal let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    private let childRef = "Players"
     
     private init() {}
     
     func getData(completion: @escaping ([Player]) -> Void){
         var players = [Player]()
-        self.ref.child("Players").observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref.child(childRef).observeSingleEvent(of: .value, with: { (snapshot) in
             if let allPlayers = snapshot.value as? [String: Any] {
                 for player in allPlayers {
                     let val = player.value as! [String: String]
@@ -38,16 +39,16 @@ class FirebaseManager {
     
     
     func addPlayer(_ player: [String: String], id: String) {
-        let reference = self.ref.child("Players").child("\(id)")
+        let reference = self.ref.child(childRef).child("\(id)")
         reference.setValue(player)
     }
     
     func updatePlayer(_ player: [String: String], id: String) {
-        self.ref.child("Players").child(id).updateChildValues(player)
+        self.ref.child(childRef).child(id).updateChildValues(player)
     }
     
     func deletePlayer(_ id: String) {
-        self.ref.child("Players").child(id).removeValue()
+        self.ref.child(childRef).child(id).removeValue()
     }
     
 }

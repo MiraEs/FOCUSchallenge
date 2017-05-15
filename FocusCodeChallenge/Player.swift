@@ -17,4 +17,3 @@ struct Player {
     let id: String
 }
 
-

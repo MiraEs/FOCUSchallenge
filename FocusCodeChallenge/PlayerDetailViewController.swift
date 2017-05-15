@@ -29,11 +29,11 @@ class PlayerDetailViewController: UIViewController {
     
     func loadCurrentPlayer() {
         self.navigationItem.title = currentPlayer.name
-        playerName.text = currentPlayer.name
-        playerWeight.text = currentPlayer.weight
-        playerAge.text = currentPlayer.age
-        playerHeight.text = currentPlayer.height
-        playerCountry.text = currentPlayer.country
+        playerName.text = "Name: \(currentPlayer.name)"
+        playerWeight.text = "Weight (lbs): \(currentPlayer.weight)"
+        playerAge.text = "Age: \(currentPlayer.age)"
+        playerHeight.text = "Height (cm) \(currentPlayer.height)"
+        playerCountry.text = "From: \(currentPlayer.country)"
     }
     
     //MARK: - Navigation

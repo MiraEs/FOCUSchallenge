@@ -17,6 +17,7 @@
 		E3454A341EC6223C002838D9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3454A331EC6223C002838D9 /* Player.swift */; };
 		E36F07FC1EC62473007ED351 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F07FB1EC62473007ED351 /* PlayerDetailViewController.swift */; };
 		E36F07FE1EC6249F007ED351 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F07FD1EC6249F007ED351 /* AddPlayerViewController.swift */; };
+		E3B4CA361EC96AD8000AE826 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4CA351EC96AD8000AE826 /* ErrorAlert.swift */; };
 		E3E07CE01EC91C200088BA44 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E07CDF1EC91C200088BA44 /* FirebaseManager.swift */; };
 		E3EC73531EC94A5D00AD07A4 /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC73521EC94A5D00AD07A4 /* EditPlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +37,7 @@
 		E3454A331EC6223C002838D9 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E36F07FB1EC62473007ED351 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		E36F07FD1EC6249F007ED351 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
-		E36F07FF1EC63A07007ED351 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
+		E3B4CA351EC96AD8000AE826 /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		E3E07CDF1EC91C200088BA44 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E3EC73521EC94A5D00AD07A4 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +124,6 @@
 			children = (
 				E3454A1F1EC61A77002838D9 /* AppDelegate.swift */,
 				E3454A231EC61A77002838D9 /* Main.storyboard */,
-				E36F07FF1EC63A07007ED351 /* Test.playground */,
 				E3454A261EC61A77002838D9 /* Assets.xcassets */,
 				E3454A281EC61A77002838D9 /* LaunchScreen.storyboard */,
 				E3454A2B1EC61A77002838D9 /* Info.plist */,
@@ -136,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E3E07CDF1EC91C200088BA44 /* FirebaseManager.swift */,
+				E3B4CA351EC96AD8000AE826 /* ErrorAlert.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -268,6 +269,7 @@
 				E3EC73531EC94A5D00AD07A4 /* EditPlayerViewController.swift in Sources */,
 				E3E07CE01EC91C200088BA44 /* FirebaseManager.swift in Sources */,
 				E3454A321EC61B91002838D9 /* BasketballTableViewController.swift in Sources */,
+				E3B4CA361EC96AD8000AE826 /* ErrorAlert.swift in Sources */,
 				E3454A341EC6223C002838D9 /* Player.swift in Sources */,
 				E3454A201EC61A77002838D9 /* AppDelegate.swift in Sources */,
 			);

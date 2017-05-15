@@ -14,8 +14,8 @@ class BasketballTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Basketball Players Around the World"
         readFromFb()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +36,6 @@ class BasketballTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return players.count
     }
     
@@ -45,7 +44,7 @@ class BasketballTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
         let thisPlayer = players[indexPath.row]
         cell.textLabel?.text = "\(thisPlayer.name) of \(thisPlayer.country)"
-        cell.detailTextLabel?.text = "Age: \(thisPlayer.age)...\(thisPlayer.id)"
+        cell.detailTextLabel?.text = "Age: \(thisPlayer.age)"
         return cell
     }
     

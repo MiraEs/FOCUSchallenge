@@ -28,7 +28,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func setPlayer() {
-        let uniqueId = FirebaseManager.manager.ref.childByAutoId().key
+        let uniqueId = fbManager.ref.childByAutoId().key
         if let name = nameTextField.text,
             let height = heightTextField.text,
             let weight = weightTextField.text,
@@ -69,11 +69,5 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.playerCountry = countryCategories[row]
-        
     }
-    
-    
-    
-    
-    
 }
