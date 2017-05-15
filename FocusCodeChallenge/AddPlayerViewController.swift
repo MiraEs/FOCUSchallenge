@@ -10,7 +10,7 @@ import UIKit
 
 class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
+    //🇫🇷🇩🇪🇺🇸🇪🇸🇦🇺
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
@@ -18,7 +18,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var countryPicker: UIPickerView!
     let fbManager = FirebaseManager.manager
     var playerCountry = String()
-    var countryCategories = ["1", "2", "3"]
+    var countryCategories = ["France🇫🇷", "Germany🇩🇪", "USA🇺🇸", "Spain🇪🇸", "Australia🇦🇺"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,8 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 "name": name,
                 "height": height,
                 "weight": weight,
-                "age": age
+                "age": age,
+                "country": playerCountry
             ]
             fbManager.addPlayer(newPlayer)
         }
@@ -44,6 +45,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func savePlayer(_ sender: UIButton) {
         setPlayer()
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: - Picker View Delegate
