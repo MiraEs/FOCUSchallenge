@@ -1,0 +1,6 @@
+framework module Pods_FocusCodeChallenge {
+  umbrella header "Pods-FocusCodeChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
