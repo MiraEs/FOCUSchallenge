@@ -29,9 +29,9 @@ class EditPlayerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func currentPlayer() {
         nameTextField.text = currentPlayerEdit.name
         countryTextField.text = currentPlayerEdit.country
-        heightTextField.text = currentPlayerEdit.height
-        ageTextField.text = currentPlayerEdit.age
-        weightTextField.text = currentPlayerEdit.weight
+        heightTextField.text = "\(currentPlayerEdit.height) cm"
+        ageTextField.text = "\(currentPlayerEdit.age) years"
+        weightTextField.text = "\(currentPlayerEdit.weight) lbs"
     }
     
     @IBAction func updatePlayerData(_ sender: UIButton) {
