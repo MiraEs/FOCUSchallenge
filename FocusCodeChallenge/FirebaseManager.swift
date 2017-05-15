@@ -25,21 +25,29 @@ class FirebaseManager {
                         let country = val["country"],
                         let weight = val["weight"],
                         let height = val["height"],
-                        let age = val["age"] {
-                        let playerAppend = Player(name: name, country: country, height: height, weight: weight, age: age)
+                        let age = val["age"],
+                        let id = val["id"] {
+                        let playerAppend = Player(name: name, country: country, height: height, weight: weight, age: age, id: id)
                         players.append(playerAppend)
-                        //dump("in closure >> \(players)")
                     }
                 }
             }
-            dump("in closure >> \(players)")
             completion(players)
         })
     }
- 
     
-    func addPlayer(_ player: [String:String]) {
-        self.ref.child("Players").childByAutoId().setValue(player)
+    
+    func addPlayer(_ player: [String: String], id: String) {
+        let reference = self.ref.child("Players").child("\(id)")
+        reference.setValue(player)
     }
-
+    
+    func updatePlayer(_ player: [String: String], id: String) {
+        self.ref.child("Players").child(id).updateChildValues(player)
+    }
+    
+    func deletePlayer(_ id: String) {
+        self.ref.child("Players").child(id).removeValue()
+    }
+    
 }

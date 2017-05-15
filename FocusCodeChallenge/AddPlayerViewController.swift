@@ -16,34 +16,40 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var countryPicker: UIPickerView!
     internal let fbManager = FirebaseManager.manager
-    var playerCountry = String()
     var countryCategories = ["France🇫🇷", "Germany🇩🇪", "USA🇺🇸", "Spain🇪🇸", "Australia🇦🇺"]
+    var playerCountry = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         countryPicker.dataSource = self
         countryPicker.delegate = self
+        playerCountry = self.countryCategories[0]
     }
     
     func setPlayer() {
+        let uniqueId = FirebaseManager.manager.ref.childByAutoId().key
         if let name = nameTextField.text,
             let height = heightTextField.text,
             let weight = weightTextField.text,
             let age = ageTextField.text {
-        let newPlayer = [
+            let newPlayer = [
                 "name": name,
                 "height": height,
                 "weight": weight,
                 "age": age,
-                "country": playerCountry
+                "country": playerCountry,
+                "id":uniqueId
             ]
-            fbManager.addPlayer(newPlayer)
+            fbManager.addPlayer(newPlayer, id: uniqueId)
         }
     }
     
     @IBAction func savePlayer(_ sender: UIButton) {
         setPlayer()
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -63,6 +69,11 @@ class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.playerCountry = countryCategories[row]
+        
     }
-
+    
+    
+    
+    
+    
 }

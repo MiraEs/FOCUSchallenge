@@ -9,27 +9,39 @@
 import UIKit
 
 class PlayerDetailViewController: UIViewController {
+    var currentPlayer: Player!
+    
+    
+    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playerWeight: UILabel!
+    @IBOutlet weak var playerAge: UILabel!
+    @IBOutlet weak var playerHeight: UILabel!
+    @IBOutlet weak var playerCountry: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        loadCurrentPlayer()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        loadCurrentPlayer()
     }
-    */
+    
+    func loadCurrentPlayer() {
+        self.navigationItem.title = currentPlayer.name
+        playerName.text = currentPlayer.name
+        playerWeight.text = currentPlayer.weight
+        playerAge.text = currentPlayer.age
+        playerHeight.text = currentPlayer.height
+        playerCountry.text = currentPlayer.country
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSegue" {
+            let dvc = segue.destination as? EditPlayerViewController
+            dvc?.currentPlayerEdit = currentPlayer
+        }
+    }
 
 }

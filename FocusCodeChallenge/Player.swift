@@ -14,6 +14,7 @@ struct Player {
     let height: String
     let weight: String
     let age: String
+    let id: String
 }
 
 

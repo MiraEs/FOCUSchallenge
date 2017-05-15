@@ -15,10 +15,11 @@ class BasketballTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         readFromFb()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //readFromFb()
+        readFromFb()
     }
     
     func readFromFb() {
@@ -27,8 +28,6 @@ class BasketballTableViewController: UITableViewController {
             self.players = allPlayers
             self.tableView.reloadData()
         }
-        
-        
     }
     
     // MARK: - Table view data source
@@ -46,8 +45,24 @@ class BasketballTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
         let thisPlayer = players[indexPath.row]
         cell.textLabel?.text = "\(thisPlayer.name) of \(thisPlayer.country)"
-        cell.detailTextLabel?.text = "Age: \(thisPlayer.age)"
-        
+        cell.detailTextLabel?.text = "Age: \(thisPlayer.age)...\(thisPlayer.id)"
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            FirebaseManager.manager.deletePlayer(players[indexPath.row].id)
+            players.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? PlayerDetailViewController,
+            let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell) {
+            dvc.currentPlayer = players[indexPath.row]
+        }
     }
 }

@@ -18,6 +18,7 @@
 		E36F07FC1EC62473007ED351 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F07FB1EC62473007ED351 /* PlayerDetailViewController.swift */; };
 		E36F07FE1EC6249F007ED351 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F07FD1EC6249F007ED351 /* AddPlayerViewController.swift */; };
 		E3E07CE01EC91C200088BA44 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E07CDF1EC91C200088BA44 /* FirebaseManager.swift */; };
+		E3EC73531EC94A5D00AD07A4 /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC73521EC94A5D00AD07A4 /* EditPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E36F07FD1EC6249F007ED351 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 		E36F07FF1EC63A07007ED351 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
 		E3E07CDF1EC91C200088BA44 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		E3EC73521EC94A5D00AD07A4 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				E3454A311EC61B91002838D9 /* BasketballTableViewController.swift */,
 				E36F07FD1EC6249F007ED351 /* AddPlayerViewController.swift */,
 				E36F07FB1EC62473007ED351 /* PlayerDetailViewController.swift */,
+				E3EC73521EC94A5D00AD07A4 /* EditPlayerViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				E36F07FC1EC62473007ED351 /* PlayerDetailViewController.swift in Sources */,
 				E36F07FE1EC6249F007ED351 /* AddPlayerViewController.swift in Sources */,
+				E3EC73531EC94A5D00AD07A4 /* EditPlayerViewController.swift in Sources */,
 				E3E07CE01EC91C200088BA44 /* FirebaseManager.swift in Sources */,
 				E3454A321EC61B91002838D9 /* BasketballTableViewController.swift in Sources */,
 				E3454A341EC6223C002838D9 /* Player.swift in Sources */,
