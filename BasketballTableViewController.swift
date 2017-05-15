@@ -11,35 +11,24 @@ import FirebaseDatabase
 
 class BasketballTableViewController: UITableViewController {
     var players = [Player]()
-    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ref = FIRDatabase.database().reference()
-        readFromFb()
-    }
-    override func viewDidAppear(_ animated: Bool) {
         readFromFb()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //readFromFb()
+    }
+    
     func readFromFb() {
-        self.ref.child("Players").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let allPlayers = snapshot.value as? [String: Any] {
-                for player in allPlayers {
-                    let val = player.value as! [String: String]
-                    if let name = val["name"],
-                        let country = val["country"],
-                        let weight = val["weight"],
-                        let height = val["height"],
-                        let age = val["age"] {
-                        let playerAppend = Player(name: name, country: country, height: height, weight: weight, age: age)
-                        self.players.append(playerAppend)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        })
+        
+        FirebaseManager.manager.getData { (allPlayers) in
+            self.players = allPlayers
+            self.tableView.reloadData()
+        }
+        
+        
     }
     
     // MARK: - Table view data source

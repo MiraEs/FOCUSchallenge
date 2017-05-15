@@ -10,13 +10,12 @@ import UIKit
 
 class AddPlayerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    //🇫🇷🇩🇪🇺🇸🇪🇸🇦🇺
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var countryPicker: UIPickerView!
-    let fbManager = FirebaseManager.manager
+    internal let fbManager = FirebaseManager.manager
     var playerCountry = String()
     var countryCategories = ["France🇫🇷", "Germany🇩🇪", "USA🇺🇸", "Spain🇪🇸", "Australia🇦🇺"]
     
